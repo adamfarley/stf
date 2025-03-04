@@ -1067,7 +1067,7 @@ public class StfCoreExtension implements StfExtension {
 	public LoadTestProcessDefinition createLoadTestSpecification(JavaVersion jvm) throws StfException {
 		String agentPath = System.getProperty("load.agent.path");
 		LoadTestProcessDefinition loadTestInvocation = new LoadTestProcessDefinition(environmentCore, jvm)
-			.addJvmOption("-Xbootclasspath/p:/home/jenkins/workspace/Grinder/jvmtest/system/STF/stf.load/bin")
+			.addJvmOption("-Xbootclasspath:/home/jenkins/workspace/Grinder/jvmtest/system/STF/stf.load/bin;/home/jenkins/workspace/Grinder/jvmtest/system/STF/stf.core/bin")
 			.addJvmOption("-javaagent:" + agentPath)
 			.addProjectToClasspath("stf.load")       // stf.load goes first to make sure we pick up the correct log4j config file
 			.addProjectToClasspath("stf.core")
