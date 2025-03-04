@@ -1067,9 +1067,9 @@ public class StfCoreExtension implements StfExtension {
 	public LoadTestProcessDefinition createLoadTestSpecification(JavaVersion jvm) throws StfException {
 		String agentPath = System.getProperty("load.agent.path");
 		LoadTestProcessDefinition loadTestInvocation = new LoadTestProcessDefinition(environmentCore, jvm)
-			.addJvmOption("-javaagent:" + agentPath)
 			.addProjectToClasspath("stf.load")       // stf.load goes first to make sure we pick up the correct log4j config file
 			.addProjectToClasspath("stf.core")
+			.addJvmOption("-javaagent:" + agentPath)
 			.addPrereqJarToClasspath(JavaProcessDefinition.JarId.LOG4J_API)
 			.addPrereqJarToClasspath(JavaProcessDefinition.JarId.LOG4J_CORE)
 			.addPrereqJarToClasspath(JavaProcessDefinition.JarId.ASM)
