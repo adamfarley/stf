@@ -434,8 +434,8 @@ my ($now, $date, $time) = stf::stfUtility->getNow(date => $TRUE, time => $TRUE);
               "$java_debug_settings" .
               " -Dlog4j.skipJansi=true" .  # Suppress warning on Windows
               " -Djava.system.class.loader=net.adoptopenjdk.stf.runner.StfClassLoader" .
-              " -Dload.agent.path=$Bin/../../stf.load/bin/stf.load.jar" .
               " -classpath $log4j_core_dir" . $sep . "$asm_commons_jar" . $sep . "$asm_jar" . $sep . "$log4j_api_dir" . $sep . "$Bin/../bin" .
+              " -Dload.agent.path=$Bin/../../stf.load/bin/stf.load.jar" .
               " net.adoptopenjdk.stf.runner.StfRunner" .
               " -properties \"$stf_parameters, $stf_personal_properties, $stf_defaults\"" .
               " -testDir \"$test_dir\"";
